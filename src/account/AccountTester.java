@@ -20,6 +20,12 @@ public class AccountTester {
         
         Scanner sc=new Scanner(System.in);
         double bal=sc.nextDouble();
+        while(bal<50){System.out.println("Minimum amount to create an account should be $50.Please re-enter the amount.");
+         bal=sc.nextDouble();
+        }
+        
+        System.out.println("Your account has been created.");
+        
         
         System.out.println("Please enter the unique user name:");
         sc.nextLine();
@@ -27,8 +33,9 @@ public class AccountTester {
         
         Account a=new Account(bal,user);
         ac[0]=a;
-             
+        a.interestBalance(bal);
         System.out.println("The balance is: "+a.getBalance());  
         System.out.println("The InterestRate per month is "+a.getInterestRate());
+        System.out.println("Your final balance is " + a.getFinalBalance());
     }
 }

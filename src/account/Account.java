@@ -15,6 +15,7 @@ public class Account {
         private double balance;
         private double interestRate=0.23;
         private String user;
+        private double finalBalance; 
  
      /**constructor that takes the initial balance
       * @param initialBalance 
@@ -23,9 +24,11 @@ public class Account {
         {
             balance=initialBalance;
             user=givenUser;
+
+            
             //Note that the initial balance must be greater than 50.       
         }
-
+        
      /**The method for depositing amount and 
       * updating balance*/
         public void credit(double amount)
@@ -40,7 +43,9 @@ public class Account {
             balance=getBalance()-amount;
 
         }
-        
+        public void interestBalance(double endbalance){
+                balance = balance + (interestRate * balance);
+        }
      /**The getter for the balance
      * @return the balance
      */
@@ -62,6 +67,10 @@ public class Account {
      */
     public String getUser() {
         return user;
+    }
+    public double getFinalBalance()
+    {
+            return finalBalance;
     }
     
     
